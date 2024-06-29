@@ -44,4 +44,5 @@ class FileStorage:
             with open(self.__file_path, 'r', encoding='utf-8') as file:
                 temp_dict = json.load(file)
             for key, value in temp_dict.items():
-                temp_object = models.the_classes[value["__class"]](**value)
+                temp_object = models.the_classes[value["__class__"]](**value)
+                self.__objects[key] = temp_object
