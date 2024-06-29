@@ -62,4 +62,21 @@ class FileStorage:
             for key, value in self.__objects.items():
                 if value == obj:
                     del self.__objects[key]
+                    self.save()
                     break
+
+    def get(self, cls, id):
+        """
+        Returns the object based on the class and its ID
+        """
+        k = f"{cls.__name__}.{id}"
+        for key, value in self.__objects.items():
+            if key == k:
+                return value
+        return None
+
+    def count(self, cls=None):
+        """
+        Count a class objects
+        """
+        return len(self.all(cls))
