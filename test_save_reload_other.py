@@ -2,6 +2,8 @@
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
+from models.category import Category
+from models.course import Course
 
 all_objs = storage.all()
 print("-- Reloaded objects --")
@@ -18,10 +20,15 @@ my_user.password = "root"
 my_user.save()
 print(my_user)
 
-print("-- Create a new User 2 --")
-my_user2 = User()
-my_user2.first_name = "John"
-my_user2.email = "airbnb2@mail.com"
-my_user2.password = "root"
-my_user2.save()
-print(my_user2)
+print("-- Create a new Category --")
+my_category = Category()
+my_category.name = "Simple Course"
+my_category.save()
+print(my_category)
+
+print("-- Create a new Course --")
+my_course = Course()
+my_course.name = "BitDev"
+my_course.description = "A great course for Bitdevs"
+my_course.save()
+print(my_course)
