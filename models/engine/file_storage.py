@@ -13,11 +13,18 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-    def all(self):
+    def all(self, cls=None):
         """
         Return __objects
         """
-        return self.__objects
+        if cls:
+            temp_objs = {}
+            for key, value in self.__objects.items():
+                if (key.split(".")[0] == cls.__name__):
+                    temp_objs.update({key: value})
+            return temp_objs
+        else:
+            return self.__objects
 
     def new(self, obj):
         """
@@ -46,3 +53,13 @@ class FileStorage:
             for key, value in temp_dict.items():
                 temp_object = models.the_classes[value["__class__"]](**value)
                 self.__objects[key] = temp_object
+
+    def delete(self, obj=None):
+        """
+        Delete an object obj
+        """
+        if obj:
+            for key, value in self.__objects.items():
+                if value == obj:
+                    del self.__objects[key]
+                    break
