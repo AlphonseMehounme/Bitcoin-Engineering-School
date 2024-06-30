@@ -12,9 +12,9 @@ def get_users():
     """
     Method to get a user
     """
-    users_json = storage.all(User)
+    users_objs = storage.all(User)
     users = {}
-    for key, value in users_json.items():
+    for key, value in users_objs.items():
         users.update({key: value.to_dict()})
     return jsonify(users)
 
@@ -26,5 +26,17 @@ def get_user(user_id):
     user_obj = storage.get(User, user_id)
     if user_obj:
         return jsonify(user_obj.to_dict())
+    else:
+        abort(404)
+
+@app_views.route("/users/<user_id>", methods=['DELETE'], strict_slashes=False)
+def delete_user(user_id):
+    """
+    Method to delete a user
+    """
+    user_obj = storage.get(User, user_id)
+    if user_obj:
+        storage.delete(user_obj)
+        return make_response(jsonify({}), 200)
     else:
         abort(404)
