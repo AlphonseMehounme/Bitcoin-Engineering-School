@@ -40,3 +40,43 @@ def delete_user(user_id):
         return make_response(jsonify({}), 200)
     else:
         abort(404)
+
+@app_views.route("/users", methods=['POST'], strict_slashes=False)
+def add_user():
+    """
+    Method to add a new user
+    """
+    try:
+        body = request.get_json()
+        if "email" not in body.keys():
+            abort(400, description="Missing email")
+        elif "password" not in body.keys():
+            abort(400, description="Missing password")
+        else:
+            user = User()
+            for key, value in body.items():
+                if key not in ["id", "created_at", "updated_at"]:
+                    user.__dict__[key] = value
+            user.save()
+            return make_response(jsonify(user.to_dict()), 201)
+    except:
+        abort(400, description="Not a JSON")
+
+@app_views.route("/users/<user_id>", methods=['PUT'], strict_slashes=False)
+def update_user(user_id):
+    """
+    Method to update a user
+    """
+    user_obj = storage.get(User, user_id)
+    if user_obj:
+        try:
+            body = request.get_json()
+            for key, value in body.items():
+                if key not in ["id", "email", "created_at", "updated_at"]:
+                    user_obj.__dict__[key] = value
+            user_obj.save()
+            return make_response(jsonify(user_obj.to_dict()), 200)
+        except:
+            abort(400, description="Not a JSON")
+    else:
+        abort(404)

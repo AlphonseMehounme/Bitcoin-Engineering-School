@@ -36,7 +36,11 @@ def add_course():
         body = request.get_json()
         print(body)
         if "name" in body.keys():
-            course = Course(body)
+            course = Course()
+            for key, value in body.items():
+                if key not in ["id", "created_at", "updated_at"]:
+                    course.__dict__[key] = value
+            course.save()
             return make_response(jsonify(course.to_dict()), 201)
         else:
             abort(400, description="Missing name")
