@@ -4,6 +4,13 @@ from models import storage
 from models.course import Course
 
 
+@app_views.route("/categories/<category_id>/courses")
+def get_category_courses(category_id):
+    """
+    Get courses for a category
+    """
+    courses_ojbs = storage.get(Course)
+    return 
 @app_views.route("/courses", methods=['GET'], strict_slashes=False)
 def get_courses():
     courses_objs = storage.all(Course)
