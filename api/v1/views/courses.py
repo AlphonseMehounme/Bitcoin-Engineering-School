@@ -10,7 +10,7 @@ def get_category_courses(category_id):
     Get courses for a category
     """
     courses_ojbs = storage.get(Course)
-    return 
+    return jsonify({})
 @app_views.route("/courses", methods=['GET'], strict_slashes=False)
 def get_courses():
     courses_objs = storage.all(Course)
