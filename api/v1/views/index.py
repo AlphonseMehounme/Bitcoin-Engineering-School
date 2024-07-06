@@ -1,4 +1,4 @@
-from api.v1.views import app_views
+from views import app_views
 from flask import jsonify
 
 
