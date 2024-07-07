@@ -1,6 +1,7 @@
 from views import app_views
-from flask import Flask, make_response, jsonify, render_template
+from flask import Flask, make_response, jsonify, render_template, request
 from os import getenv
+import json
 
 app = Flask(__name__)
 """app.register_blueprint(app_views)"""
@@ -19,6 +20,19 @@ def login_page() -> 'str':
 
 @app.route('/login_result', methods=['POST'])
 def login_result_page() -> 'str':
+
+    json_file = "/home/yam1st/BES/Bitcoin-Engineering-School/file.json"
+    email = request.form['mail']
+    password = request.form['password']
+
+    with open(json_file) as file:
+        data = json.load(file)
+
+    for user, user_data in data.items():
+        if 'email' in user_data and 'password' in user_data:
+            if user_data['email'] == email and user_data['password'] == password:
+                return render_template('login_result.html', the_title='Welcome on BES', the_mail=email, the_password=password)
+
     return render_template('login_result.html', the_title='Welcome on BES')
 
 @app.teardown_appcontext
