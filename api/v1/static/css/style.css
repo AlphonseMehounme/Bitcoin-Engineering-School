@@ -6,7 +6,6 @@ body {
     margin-bottom:    5%;
     margin-left:      10%;
     margin-right:     10%;
-    border:           1px dotted gray;
     padding:          10px 10px 10px 10px;
   }
   a {
@@ -21,6 +20,7 @@ body {
   }
   h2 {
     font-size:        150%;
+    text-align: center;
   }
   table {
     margin-left:      20px;
@@ -70,3 +70,63 @@ body {
   select {
     font-size:        125%;
   }
+
+  /** bannierre**/
+  .banner {
+      
+      background-image: url('../images/images.png');
+      background-size: contain;
+      height: 500px;
+      width: 100%;
+  }
+
+  .overlay {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 30%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+  }
+
+  .overlay h2 {
+      color: white;
+      margin-bottom: 10px;
+  }
+
+  .overlay button {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+  }
+
+/**services**/
+.service-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #333;
+}
+
+.card p {
+    color: #666;
+}

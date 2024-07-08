@@ -7,12 +7,8 @@ app = Flask(__name__)
 """app.register_blueprint(app_views)"""
 
 @app.route('/')
-def hello() -> str:
-    return 'Hello world from Flask!'
-
-@app.route('/index')
-def index():
-    return jsonify({"index": "Welcome on BES"})
+def index() -> str:
+    return render_template('home.html', the_title='welcome on BES')
 
 @app.route('/login')
 def login_page() -> 'str':
