@@ -28,12 +28,25 @@ def login_result_page() -> 'str':
     with open(json_file) as file:
         data = json.load(file)
 
+
+    courses = []
+    for user_id, user_data in data.items():
+        if 'email' in user_data and user_data['email'] == email:
+            if 'courses' in user_data:
+                courses = user_data['courses']
+
+    categories = []
+    for user_id, user_data in data.items():
+        if 'email' in user_data and user_data['email'] == email:
+            if 'categories' in user_data:
+                categories = user_data['categories']
+
     for user, user_data in data.items():
         if 'email' in user_data and 'password' in user_data:
             if user_data['email'] == email and user_data['password'] == password:
                 return render_template('login_result.html', the_title='Welcome on BES', the_mail=email, the_password=password)
 
-    return render_template('login_result.html', the_title='Welcome on BES')
+    return render_template('login_result.html', the_title='Welcome on BES', the_courses=courses, the_categories=categories )
 
 @app.teardown_appcontext
 def close_app(exception):

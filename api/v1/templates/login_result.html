@@ -6,4 +6,16 @@
 <tr><td>Mail:</td><td>{{ the_mail }}</td></tr>
 <tr><td>Password:</td><td>{{ the_password }}</td></tr>
 </table>
+<h2>Your courses</h2>
+    <ul>
+        {% for item in the_courses %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Your categories</h2>
+    <ul>
+        {% for item in the_categories %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
