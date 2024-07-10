@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{ the_title }}</h2>
+<form method='POST' action='/login_ld_result'>
+<table>
+<p>Use this form to log in:</p>
+<tr><td>Mail:</td><td><input name='mail' type='text' width='60'></td></tr>
+<tr><td>Password:</td><td><input name='password' type='TEXT' value='aeiou'></td></tr>
+</table>
+<p>When you're ready, click this button:</p>
+<p><input value='log in!' type='SUBMIT'></p>
+</form>
+{% endblock %}
