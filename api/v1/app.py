@@ -1,4 +1,4 @@
-from views import app_views
+from .views import app_views
 from flask import Flask, make_response, jsonify, render_template, request
 from os import getenv
 import json
@@ -17,7 +17,7 @@ def login_page() -> 'str':
 @app.route('/login_result', methods=['POST'])
 def login_result_page() -> 'str':
 
-    json_file = "/home/yam1st/BES/Bitcoin-Engineering-School/file.json"
+    json_file = "file.json"
     email = request.form['mail']
     password = request.form['password']
 
