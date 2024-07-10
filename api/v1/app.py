@@ -1,10 +1,10 @@
-from views import app_views
+from .views import app_views
 from flask import Flask, make_response, jsonify, render_template, request
 from os import getenv
 import json
 
 app = Flask(__name__)
-"""app.register_blueprint(app_views)"""
+app.register_blueprint(app_views)
 
 @app.route('/')
 def index() -> str:
@@ -18,7 +18,6 @@ def login_page() -> 'str':
 def login_result_page() -> 'str':
 
     json_file = "file.json"
-    email = request.form['mail']
     password = request.form['password']
 
     with open(json_file) as file:

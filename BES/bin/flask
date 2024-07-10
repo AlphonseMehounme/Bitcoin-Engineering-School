@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/alphonse/Desktop/Hisotry/Software Engineering/ALX SE/Graduation/BES/BES/bin/python3.11" "$0" "$@"
-' '''
+#!/Bitcoin-Engineering-School/BES/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
