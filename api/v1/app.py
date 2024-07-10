@@ -1,4 +1,4 @@
-from .views import app_views
+from views import app_views
 from flask import Flask, make_response, jsonify, render_template, request
 from os import getenv
 import json
