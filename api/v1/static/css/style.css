@@ -43,6 +43,15 @@ body {
   .confirmentry {
     font-weight:      600; 
   }
+
+  
+  table{
+    margin:auto;
+  }
+
+ form > p{
+    text-align:center;
+  }
   
   /*** Tables ***/
   

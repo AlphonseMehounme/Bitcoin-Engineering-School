@@ -12,19 +12,19 @@ def index() -> str:
 
 @app.route('/login_ld')
 def ld_login_page() -> 'str':
-    return render_template('login_ld.html', the_title='Please log on on ls')
+    return render_template('login_ld.html', the_title='Please log on ls')
 
 @app.route('/login_besd')
 def besd_login_page() -> 'str':
-    return render_template('login_besd.html', the_title='Please log on on ls')
+    return render_template('login_besd.html', the_title='Please log on besd')
 
 @app.route('/login_besd_c2_l')
 def besd_login_c2_page() -> 'str':
-    return render_template('besd_c2.html', the_title='Please log on on ls')
+    return render_template('besd_c2.html', the_title='Please log on besd chapter 2')
 
 @app.route('/login_ld_c2')
 def ld_login_c2_page() -> 'str':
-    return render_template('ld_c2.html', the_title='Please log on on ls')
+    return render_template('ld_c2.html', the_title='Please log on ls chapter 2')
 
 
 @app.route('/login_besd_result', methods=['POST'])
@@ -40,7 +40,8 @@ def besd_login_page_result() -> 'str':
         if 'email' in user_data and 'password' in user_data:
             if user_data['email'] == email and user_data['password'] == password:
                 return render_template('besd.html', the_title='Welcome on BES')
-
+            else:
+                return render_template('erreur_page.html', the_title='You not not the person')
 
 @app.route('/login_ld_result', methods=['POST'])
 def ld_login_page_result() -> 'str':
@@ -55,6 +56,8 @@ def ld_login_page_result() -> 'str':
         if 'email' in user_data and 'password' in user_data:
             if user_data['email'] == email and user_data['password'] == password:
                 return render_template('ld.html', the_title='Welcome on BES')
+            else:
+                return render_template('erreur_page.html', the_title='You not not the person')
 
 
 

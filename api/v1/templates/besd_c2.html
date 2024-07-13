@@ -31,15 +31,27 @@
 <h4>
     Exercice : 
 </h4>
+
 <ol>
-    <li>Perform the stack evaluation of this Bitcoin script and indicate whether it will result in true or false: hex: '010101029301038801027693010487'. Your solution should output the op_codes and/or values.
+    <li>
+        Perform the stack evaluation of this Bitcoin script and indicate whether it will result in true or false: hex: '010101029301038801027693010487'. 
+        Answer in file Bitdev/chapter2/answer1.txt
     </li>
-    <li>Given the string 'Btrust Builders', whose bytes encoding is '427472757374204275696c64657273', which is our preimage, generate the redeem script in hex format for the given preimage. Note: redeem_script => OP_SHA256 <lock_hex> OP_EQUAL
+    <li>
+
+        Write a Python function (def stackeval(hex)) that evaluates a stack and returns the result. Answer in file Bitdev/chapter2/answer2.py
+
     </li>
-    <li>Derive an address with from the above (2) redeemscript and construct a transaction that send Bitcoins to the address
+    <li>
+
+        Given the string 'Btrust Builders', whose bytes encoding is '427472757374204275696c64657273', which is our preimage, generate the redeem script in hex format for the given preimage. Note: redeem_script => OP_SHA256 <lock_hex> OP_EQUAL
+            Answer in file Bitdev/chapter2/answer3.txt            
+
     </li>
-    <li>Construct another transaction that spends from the above (3) transaction given that you have both locking and unlock scripts. Ideally, this would mean you write a transaction builder that constructs the transaction and outputs the transaction ID. Broadcast the transaction on you local bitcoin network via the CLI.
+    <li>
+
+        Derive an address from the above (2) redeemscript and construct a transaction that sends Bitcoins to the address. Write the transaction hash in file Bitdev/chapter2/answer4.txt            
+
     </li>
 </ol>
-
 {% endblock %}
