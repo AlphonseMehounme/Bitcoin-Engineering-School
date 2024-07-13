@@ -26,3 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '/login_ld_c2';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    $('#verid1').on('click', function() {
+        const owner = "alphonsemehounme";
+        const repo = "bitdev";
+        const path = "chapter1/anwser1.txt";
+        const branch = "main";
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
+
+        $.ajax({
+            url: url,
+            method: "GET",
+            headers: {
+                "Accept": "application/vnd.github.v3+json"
+            },
+            success: function(response) {
+                const content = atob(response.content);
+                $("#verid1").text(content);
+            },
+            error: function(xhr, status, error) {
+                console.error(`Error fetching file: ${xhr.status} ${xhr.statusText}`);
+            }
+        });
+    });
+});
