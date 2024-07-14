@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     card.on('click', function() {
         window.location.href = '/login_besd';
     });
+
+    $('#id_bsd2').on('click', function() {
+	window.location.href = '/login_besd';
+    });
+
+    $('#id_home').on('click', function() {
+	window.location.href = '/';
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -28,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    $('#verify1').on('click', function() {
+    $('#verify111').on('click', function() {
         const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer1`;
 
@@ -42,12 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const content = atob(response.content);
 		console.log(content);
 		if (content == 2) {
-			$("#status1").text("Validated");
-			$("#status1").css('color', 'green');
+			$("#status111").text("Validated");
+			$("#status111").css('color', 'green');
 		}
 		else {
-			$("#status1").text("Failed");
-			$("#status1").css('color', 'red');
+			$("#status111").text("Failed");
+			$("#status111").css('color', 'red');
 		}
             },
             error: function(xhr, status, error) {
@@ -56,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    $('#verify2').on('click', function() {
+    $('#verify112').on('click', function() {
 	const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer2`;
 
@@ -70,12 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		const content = atob(response.content);
 		console.log(content);
 		if (content == 1) {
-			$("#status2").text("Validated");
-			$("#status2").css('color', 'green');
+			$("#status112").text("Validated");
+			$("#status112").css('color', 'green');
 		}
 		else {
-			$("#status2").text("Failed");
-			$("#status2").css('color', 'red')
+			$("#status112").text("Failed");
+			$("#status112").css('color', 'red')
 		}
 	    },
 	    error: function(xhr, status, error) {
