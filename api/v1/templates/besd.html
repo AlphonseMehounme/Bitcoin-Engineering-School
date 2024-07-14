@@ -3,15 +3,14 @@
 <h2>{{ the_title }}</h2>
 <h3>Chapter 1 : Structure of a Transaction</h3>
 <h4>Goals</h4>
-<p>Understand</p>
 <ul>
-    <li>Structure of a Transaction</li>
+    <li>Understand Structure of a Transaction</li>
     <li>Version</li>
     <li>Inputs</li>
     <li>Outputs</li>
     <li>Locktime</li>
 </ul>
-<p>Ressources : </p>
+<h4>Ressources (Read/Watch) : </h4>
 <ul>
     <li><a href="https://drive.google.com/file/d/1gcXBZosFGHmu4UU6afKHYpXJHpeIU3BK/view?usp=sharing">Mastering Bitcoin Chapter 6: Transactions</a></li>
     <li><a href="https://developer.bitcoin.org/devguide/transactions.html#introduction">Introduction to Transactions</a></li>
@@ -19,41 +18,40 @@
     <li><a href="https://dev.to/thunderbiscuit/deconstructing-a-bitcoin-transaction-4l2n">Deconstructing a bitcoin transaction</a></li>
     <li><a href="https://www.youtube.com/watch?v=Shd9nXe1X-0">Introduction to Transaction</a></li>
 </ul>
-<p>Requirements : </p>
-<p>Create a repository named Bitdev on github
-    In the repo, create a folder named chapter1
-    In the folder create the file answer1, answer2, etc for each answer to the exercises.
+<h4>Requirements : </h4>
+<p>
+Create the repository bitdev on github,<br>
+In the repo, create a folder named chapter1,<br>
+In the folder create the file answer1, answer2 and anwser3 for exercices answers.
 </p>
-<p>Exercice</p>
-<p>Given the following transaction hexs: <a href="https://mempool.space/api/tx/27f1d66f8a1ee5280f4e92508dcb647e954d53004905d08a75574daee4988360/hex">Legacy</a><a href="https://mempool.space/tx/1e300f8666ab9a3970a628196196f5b4707604bf7e7b03d37f902e7817623bfd">Segwit with RBF</a><a href="https://mempool.space/api/tx/6d9da35544e87a88279c5bfc66e08a873f3d456b4d6112620e2c41555863f920/hex">Taproot</a></p>
+<h4>Exercice</h4>
+<p>Given the following transaction hexs: <br><a href="https://mempool.space/api/tx/27f1d66f8a1ee5280f4e92508dcb647e954d53004905d08a75574daee4988360/hex">Legacy</a><br><a href="https://mempool.space/tx/1e300f8666ab9a3970a628196196f5b4707604bf7e7b03d37f902e7817623bfd">Segwit with RBF</a><br><a href="https://mempool.space/api/tx/6d9da35544e87a88279c5bfc66e08a873f3d456b4d6112620e2c41555863f920/hex">Taproot</a></p>
 <ol>
     <li>
-	    What is the version of <a href="https://mempool.space/api/tx/27f1d66f8a1ee5280f4e92508dcb647e954d53004905d08a75574daee4988360/hex">Legacy</a> (just the answer in Bitdev/chapter1/anwser1.txt file)
+	    <p>What is the version of <a href="https://mempool.space/api/tx/6d9da35544e87a88279c5bfc66e08a873f3d456b4d6112620e2c41555863f920/hex">Taproot</a> (just the answer in Bitdev/chapter1/anwser1.txt file)</p>
 	    <button id="verify1">Verify</button>
 	    <button id="status1">Status</button>
     </li>
+    <br>
     <li>
-	    What is the number of input of <a href="https://mempool.space/api/tx/27f1d66f8a1ee5280f4e92508dcb647e954d53004905d08a75574daee4988360/hex">Legacy</a><a href="https://mempool.space/tx/1e300f8666ab9a3970a628196196f5b4707604bf7e7b03d37f902e7817623bfd">Segwit with RBF</a>(just the answer in Bitdev/answer2.txt file)
+	    <p>What is the number of input of <a href="https://mempool.space/tx/1e300f8666ab9a3970a628196196f5b4707604bf7e7b03d37f902e7817623bfd">Segwit with RBF</a>(just the answer in Bitdev/answer2.txt file)</p>
 	    <button id="#verify2">Verify</button>
 	    <button id="status2">Status</button>
     </li>
+    <br>
     <li>
-	    Write a Python function (def trxparser()) that prints to the stdout the transaction type, version, number of inputs, number of outputs and the locktime (format below in the Bitdev/chapter1/answer3.py file).
+	    <p>Write a Python function (def trxparser()) that prints to the stdout the transaction type, version, number of inputs, number of outputs and the locktime of <a href="https://mempool.space/api/tx/27f1d66f8a1ee5280f4e92508dcb647e954d53004905d08a75574daee4988360/hex">Legacy</a> (format below in the Bitdev/chapter1/answer3.py file).</p>
+	    <p>Format : </p>
+            <div>
+                    <p>Type: Type</p>
+                    <p>Number of inputs : number</p>
+                    <p>Number of outputs : number</p>
+                    <p>Locktime : Locktime</p>
+            </div>
 	    <button id="#verify3">Verify</button>
 	    <button id="status3">Status</button>
     </li>
-    <li>
-	    Derive an address from the above (2) redeemscript and construct a transaction that sends Bitcoins to the address. Write the transaction hash in file Bitdev/chapter2/answer4.txt
-	    <p>Format : </p>
-	    <div>
-		    <p>Type: Type</p>
-		    <p>Number of inputs : number</p>
-		    <p>Number of outputs : number</p>
-		    <p>Locktime : Locktime</p>
-	    </div>
-	    <button id="#verify4">Verify</button>
-	    <button id="status4">Status</button>
-    </li>
+    <br>
 </ol>
 <div id="desd_chapter_2" style="text-align: center;">Click to chapter 2</div>
 
