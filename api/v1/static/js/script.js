@@ -40,14 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             success: function(response) {
                 const content = atob(response.content);
-		console.log(content)
-		if (content == False) {
-			$("#status1").text("validated");
-			$("#status1").css("color", "green")
+		console.log(content);
+		if (content == 2) {
+			$("#status1").text("Validated");
+			$("#status1").css('color', 'green');
 		}
 		else {
 			$("#status1").text("Failed");
-			$("#status1").css("color", "red")
+			$("#status1").css('color', 'red');
 		}
             },
             error: function(xhr, status, error) {
@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	    },
 	    success: function(response) {
 		const content = atob(response.content);
-		console.log(content)
+		console.log(content);
 		if (content == 1) {
-			$("#status2").text("Validated")
-			$("#status2").css("color", "green")
+			$("#status2").text("Validated");
+			$("#status2").css('color', 'green');
 		}
 		else {
-			$("#status2").text("Failed")
-			$("#status2").css("color", "red")
+			$("#status2").text("Failed");
+			$("#status2").css('color', 'red')
 		}
 	    },
 	    error: function(xhr, status, error) {
