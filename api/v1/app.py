@@ -29,7 +29,7 @@ def ld_login_c2_page() -> 'str':
 
 @app.route('/login_besd_result', methods=['POST'])
 def besd_login_page_result() -> 'str':
-    json_file = "/home/yam1st/BES/Bitcoin-Engineering-School/file.json"
+    json_file = "file.json"
     email = request.form['mail']
     password = request.form['password']
 
@@ -45,7 +45,7 @@ def besd_login_page_result() -> 'str':
 
 @app.route('/login_ld_result', methods=['POST'])
 def ld_login_page_result() -> 'str':
-    json_file = "/home/yam1st/BES/Bitcoin-Engineering-School/file.json"
+    json_file = "file.json"
     email = request.form['mail']
     password = request.form['password']
 
@@ -64,7 +64,7 @@ def ld_login_page_result() -> 'str':
 @app.route('/login_result', methods=['POST'])
 def login_result_page() -> 'str':
 
-    json_file = "/home/yam1st/BES/Bitcoin-Engineering-School/file.json"
+    json_file = "file.json"
     email = request.form['mail']
     password = request.form['password']
 
