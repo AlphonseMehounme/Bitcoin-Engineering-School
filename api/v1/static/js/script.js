@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	    },
 	    error: function(xhr, status, error) {
-		    console.error(`Error fetching file: ${xhr.status} ${xhr.statusText}`);
+		console.error(`Error fetching file: ${xhr.status} ${xhr.statusText}`);
 	    }
 	});
     });
