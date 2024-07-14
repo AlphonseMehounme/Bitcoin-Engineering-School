@@ -28,12 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    $('#verid1').on('click', function() {
+    $('#verify1').on('click', function() {
         const owner = "alphonsemehounme";
         const repo = "bitdev";
         const path = "chapter1/anwser1.txt";
         const branch = "main";
-        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
+        const url2 = 'https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}';
+	const url = 'https://api.github.com/repos/alphonsemehounme/bitdev/contents/chapter1/answer1';
 
         $.ajax({
             url: url,
@@ -43,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             success: function(response) {
                 const content = atob(response.content);
-                $("#verid1").text(content);
+		console.log(content)
+                $("#status1").text($("#status1").val + ": validated");
             },
             error: function(xhr, status, error) {
                 console.error(`Error fetching file: ${xhr.status} ${xhr.statusText}`);
