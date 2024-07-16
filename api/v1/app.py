@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
-@app.route('/')
+@app.route('/home')
 def index() -> str:
     return render_template('home.html', the_title='welcome on BES')
 
