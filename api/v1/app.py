@@ -10,6 +10,10 @@ app.register_blueprint(app_views)
 def index() -> str:
     return render_template('home.html', the_title='welcome on BES')
 
+@app.route('/bes')
+def bes() -> str:
+    return render_template('landing_page.html', the_title='welcome on BES')
+
 @app.route('/login_ld')
 def ld_login_page() -> 'str':
     return render_template('login_ld.html', the_title='Please log on ls')
