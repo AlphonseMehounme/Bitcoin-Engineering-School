@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    var card = $('#join');
+    card.on('click', function() {
+        window.location.href = '/join';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     $('#verify111').on('click', function() {
         const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer1`;

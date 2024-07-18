@@ -1,13 +1,26 @@
 header {
     height: 50px;
-    background-color: #ef7e38;
+    background-color: #FF914D;
+}
+
+.overlay h1{
+  color: #fafcff;
+}
+
+.overlay p {
+  color: #fafcff;
 }
 
 footer {
-    height: 50px;
-    background-color: #ef7e38;
+  display: grid;
+    height:100px;
+    background-color: #FF914D;
+    align-items: center;
     text-align: center;
     bottom: 0;
+    color: #fafcff;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul {
@@ -27,7 +40,7 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  color: black;
+  color: #fafcff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -190,6 +203,12 @@ nav ul li a {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.citation p {
+  text-align: center;
+  padding: 0 15%;
+}
+
 .author {
   font-weight: bold;
   margin-bottom: 10px;
@@ -317,12 +336,23 @@ td, th {
   }
 
   .overlay button {
-      background-color: white;
-      color: black;
+      background-color: #FF914D;
+      color: #fafcff;
       padding: 10px 20px;
       border: none;
       cursor: pointer;
   }
+
+  div button {
+    background-color: #FF914D;
+    color: #fafcff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.call{
+  text-align: center;
+}
 
 /**services**/
 .service-card {
