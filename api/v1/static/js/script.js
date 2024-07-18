@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#id_home').on('click', function() {
 	window.location.href = '/';
     });
+    $('#join').on('click', function() {
+        window.location.href = '/join';
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -35,12 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var card = $('#join');
-    card.on('click', function() {
-        window.location.href = '/join';
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     $('#verify111').on('click', function() {
