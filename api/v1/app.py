@@ -6,11 +6,11 @@ import json
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
-@app.route('/home')
+@app.route('/join')
 def index() -> str:
     return render_template('home.html', the_title='welcome on BES')
 
-@app.route('/bes')
+@app.route('/')
 def bes() -> str:
     return render_template('landing_page.html', the_title='welcome on BES')
 

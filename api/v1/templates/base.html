@@ -8,15 +8,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="../static/files/bitcoin.pdf">Bitcoin Whitepaper</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+	    <ul>
+	        <li><a href="#about">About</a></li>
+                <li><a href="../static/files/bitcoin.pdf">Bitcoin Whitepaper</a></li>
+            </ul>
+        </nav>
+    </header>
     {% block body %}
     
     {% endblock %}
+    <footer>
+	<p>© 2024 The Bitcoin Engineering School.</p>
+    </footer>
     <script src="static/js/script.js"></script>
 </body>
 </html>

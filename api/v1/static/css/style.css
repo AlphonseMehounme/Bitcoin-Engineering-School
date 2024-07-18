@@ -1,3 +1,15 @@
+header {
+    height: 50px;
+    background-color: #ef7e38;
+}
+
+footer {
+    height: 50px;
+    background-color: #ef7e38;
+    text-align: center;
+    bottom: 0;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -18,9 +30,10 @@ nav ul li a {
   color: black;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;}
+  text-decoration: none;
+}
 
-  .feature-section {
+.feature-section {
     text-align: center;
     padding: 50px;
 }
@@ -41,8 +54,7 @@ nav ul li a {
 .feature-image {
     width: 300px;
     height: 300px;
-    object-fit: cover;
-    
+    object-fit: cover;    
     margin-bottom: 20px;
 }
 
@@ -69,7 +81,6 @@ nav ul li a {
 .partner-image {
   width: 300px;
   height: 300px;
-  
   margin-bottom: 20px;
 }
 
@@ -97,8 +108,6 @@ nav ul li a {
 .graduate-logo {
   width: 200px;
   height: 200px;
-  
-  
   margin-bottom: 20px;
 }
 
@@ -118,7 +127,6 @@ nav ul li a {
 
 .team-member {
   display: inline-block;
-  
   margin-bottom: 30px;
 }
 
@@ -195,37 +203,44 @@ body {
     font-family:      Verdana, Geneva, Arial, sans-serif;
     font-size:        medium;
     background-color: tan;
-    margin-top:       5%;
-    margin-bottom:    5%;
-    margin-left:      10%;
-    margin-right:     10%;
-    padding:          10px 10px 10px 10px;
+    margin-top:       0;
+    margin-bottom:    0;
+    margin-left:      0;
+    margin-right:     0;
+    padding:          0;
   }
-  a {
+
+a {
     text-decoration:  none; 
     font-weight:      600; 
-  }
-  a:hover {
+}
+  
+a:hover {
     text-decoration:  underline;
-  }
-  a img {
+}
+  
+a img {
     border:           0;
-  }
-  h2 {
+}
+  
+h2 {
     font-size:        150%;
     text-align: center;
-  }
-  table {
+}
+  
+table {
     margin-left:      20px;
     margin-right:     20px;
     caption-side:     bottom;
     border-collapse:  collapse;
-  }
-  td, th {
+}
+  
+td, th {
     padding:          5px;
     text-align:       left;
   }
-  .copyright {
+
+.copyright {
     font-size:        75%;
     font-style:       italic;
   }
@@ -286,7 +301,7 @@ body {
       position: relative;
       bottom: 0;
       left: 0;
-      width: 30%;
+      width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       display: flex;
