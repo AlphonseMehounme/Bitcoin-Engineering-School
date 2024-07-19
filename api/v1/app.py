@@ -45,7 +45,8 @@ def besd_login_page_result() -> 'str':
             if user_data['email'] == email and user_data['password'] == password:
                 return render_template('besd.html', the_title='Welcome on BES')
             else:
-                return render_template('erreur_page.html', the_title='You not not the person')
+                continue
+    return render_template('erreur_page.html', the_title='You not not the person')
 
 @app.route('/login_ld_result', methods=['POST'])
 def ld_login_page_result() -> 'str':
@@ -61,7 +62,8 @@ def ld_login_page_result() -> 'str':
             if user_data['email'] == email and user_data['password'] == password:
                 return render_template('ld.html', the_title='Welcome on BES')
             else:
-                return render_template('erreur_page.html', the_title='You not not the person')
+                continue
+    return render_template('erreur_page.html', the_title='You not not the person')
 
 
 
