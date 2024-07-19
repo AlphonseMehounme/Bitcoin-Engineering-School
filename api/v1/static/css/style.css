@@ -1,3 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 header {
     height: 50px;
     background-color: #FF914D;
@@ -17,6 +27,7 @@ footer {
     background-color: #FF914D;
     align-items: center;
     text-align: center;
+    position: relative;
     bottom: 0;
     color: #fafcff;
     margin: 0;
@@ -343,7 +354,7 @@ td, th {
       cursor: pointer;
   }
 
-  div button {
+  div button, button {
     background-color: #FF914D;
     color: #fafcff;
     padding: 10px 20px;
