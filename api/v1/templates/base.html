@@ -10,10 +10,14 @@
 <body>
     <div class="wrapper">
         <header>
+	    <!-- <div class="logo">
+		    BES
+	    </div> -->
             <nav>
 	        <ul>
-	            <li><a href="#about">About</a></li>
-                    <li><a href="../static/files/bitcoin.pdf">Bitcoin Whitepaper</a></li>
+		    <li><a href="/">Home</a></li>
+		    <li><a href="{{ url_for('serve_whitepaper') }}">Bitcoin Whitepaper</a></li>
+	            <li><a href="/#about">About</a></li>
                 </ul>
             </nav>
         </header>

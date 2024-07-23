@@ -1,5 +1,5 @@
 from api.v1.views import app_views
-from flask import Flask, make_response, jsonify, render_template, request
+from flask import Flask, make_response, jsonify, render_template, request, send_from_directory
 from os import getenv
 import json
 
@@ -8,27 +8,27 @@ app.register_blueprint(app_views)
 
 @app.route('/join')
 def index() -> str:
-    return render_template('home.html', the_title='welcome on BES')
+    return render_template('home.html', the_title='BES Courses')
 
 @app.route('/')
 def bes() -> str:
-    return render_template('landing_page.html', the_title='welcome on BES')
+    return render_template('landing_page.html', the_title='Bitcoin Engineering School')
 
 @app.route('/login_ld')
 def ld_login_page() -> 'str':
-    return render_template('login_ld.html', the_title='Please log on ls')
+    return render_template('login_ld.html', the_title='BES Login')
 
 @app.route('/login_besd')
 def besd_login_page() -> 'str':
-    return render_template('login_besd.html', the_title='Please log on besd')
+    return render_template('login_besd.html', the_title='BES Login')
 
 @app.route('/login_besd_c2_l')
 def besd_login_c2_page() -> 'str':
-    return render_template('besd_c2.html', the_title='Please log on besd chapter 2')
+    return render_template('besd_c2.html', the_title='Bitcoin Dev Course')
 
 @app.route('/login_ld_c2')
 def ld_login_c2_page() -> 'str':
-    return render_template('ld_c2.html', the_title='Please log on ls chapter 2')
+    return render_template('ld_c2.html', the_title='Lightning Dev Course')
 
 
 @app.route('/login_besd_result', methods=['POST'])
@@ -43,10 +43,10 @@ def besd_login_page_result() -> 'str':
     for user, user_data in data.items():
         if 'email' in user_data and 'password' in user_data:
             if user_data['email'] == email and user_data['password'] == password:
-                return render_template('besd.html', the_title='Welcome on BES')
+                return render_template('besd.html', the_title='Bitcoin Dev Course')
             else:
                 continue
-    return render_template('erreur_page.html', the_title='You not not the person')
+    return render_template('erreur_page.html', the_title='Login Error')
 
 @app.route('/login_ld_result', methods=['POST'])
 def ld_login_page_result() -> 'str':
@@ -60,10 +60,10 @@ def ld_login_page_result() -> 'str':
     for user, user_data in data.items():
         if 'email' in user_data and 'password' in user_data:
             if user_data['email'] == email and user_data['password'] == password:
-                return render_template('ld.html', the_title='Welcome on BES')
+                return render_template('ld.html', the_title='Lightning Dev Course')
             else:
                 continue
-    return render_template('erreur_page.html', the_title='You not not the person')
+    return render_template('erreur_page.html', the_title='Login Error')
 
 
 
@@ -104,6 +104,10 @@ def service_page(service_id):
 
     # Renvoyer les données à la page de service
     return render_template('service_page.html', service_data=service_data)
+
+@app.route('/bitcoin.pdf')
+def serve_whitepaper():
+    return send_from_directory('static/files', 'bitcoin.pdf')
 
 @app.teardown_appcontext
 def close_app(exception):

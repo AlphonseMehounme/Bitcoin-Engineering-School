@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#join').on('click', function() {
         window.location.href = '/join';
     });
+
+    $('#join2').on('click', function() {
+	window.location.href = '/join';
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
