@@ -1,4 +1,6 @@
 # Bitcoin-Engineering-School
+![image](https://github.com/user-attachments/assets/138db078-66a5-462d-a0da-4bc70430d9b1)
+
 
 ## How to install and run the project
 
