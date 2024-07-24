@@ -50,13 +50,13 @@ Project Architecture
 
 ## 🖥️ Screenshots
 
-* Home Page
+### * Home Page
 ![image](https://github.com/user-attachments/assets/a935bf88-e039-47f9-8291-8388d3ff6d55)
 
-* Courses
+### * Courses
 ![image](https://github.com/user-attachments/assets/a05a55e3-0d92-4f59-9960-ba36c556b067)
 
-* Features
+### * Features
 ![image](https://github.com/user-attachments/assets/7e18a418-0d81-4939-b218-5ef3229f9ed7)
 
 ## 🏗️ Installation
