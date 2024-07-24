@@ -12,13 +12,15 @@ With this first version 0.1 of the platform, anyone who would like start working
 
 ### Website  : 
 
+Visit our website here :
+
 🔗 http://yambnb.tech/
 
 ### Project announcement article : 
 
 Find here the project announcement by Yam with more details on the story : 
 
-https://medium.com/@mantynouyacoubou/announcement-of-bes-1-0-ef94e642a9a5
+🔗 https://medium.com/@mantynouyacoubou/announcement-of-bes-1-0-ef94e642a9a5
 
 ### Author(s) LinkedIn : 
 
@@ -34,7 +36,28 @@ https://medium.com/@mantynouyacoubou/announcement-of-bes-1-0-ef94e642a9a5
 
 ## 📐 Architecture
 
+Project Architecture
+
 ![image](https://github.com/user-attachments/assets/07a60d84-36f5-4da8-a4ad-935cdab5d3be)
+
+## 💻 Technology
+
+* Back-end : Python + Flask
+
+* Front-end : HTML + CSS + JS
+
+![image](https://github.com/user-attachments/assets/64c141cc-c4d4-4825-8e54-ef7d2d95ae3f)
+
+## 🖥️ Screenshots
+
+* Home Page
+![image](https://github.com/user-attachments/assets/a935bf88-e039-47f9-8291-8388d3ff6d55)
+
+* Courses
+![image](https://github.com/user-attachments/assets/a05a55e3-0d92-4f59-9960-ba36c556b067)
+
+* Features
+![image](https://github.com/user-attachments/assets/7e18a418-0d81-4939-b218-5ef3229f9ed7)
 
 ## 🏗️ Installation
 
