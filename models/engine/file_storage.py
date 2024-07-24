@@ -5,7 +5,6 @@ import models
 FileStorage Module
 """
 
-
 class FileStorage:
     """
     FileStorage class

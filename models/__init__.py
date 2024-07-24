@@ -12,5 +12,6 @@ the_classes = {"BaseModel": BaseModel,
                "User": User,
                "Category": Category,
                "Course": Course}
+
 storage = FileStorage()
 storage.reload()

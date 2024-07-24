@@ -1,6 +1,10 @@
+/*------------------*\
+ * Main JS File
+\*------------------*/
+
+/* Handle Main button click after Dom content load */
 document.addEventListener('DOMContentLoaded', function() {
-    var card = $('#id_bsd');
-    card.on('click', function() {
+    $('#id_bsd').on('click', function() {
         window.location.href = '/login_besd';
     });
 
@@ -18,32 +22,23 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#join2').on('click', function() {
 	window.location.href = '/join';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var card = $('#id_ld');
-    card.on('click', function() {
+    $('#id_ld').on('click', function() {
         window.location.href = '/login_ld';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var card = $('#desd_chapter_2');
-    card.on('click', function() {
+    $('#desd_chapter_2').on('click', function() {
         window.location.href = '/login_besd_c2_l';
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    var card = $('#ld_c2');
-    card.on('click', function() {
+    $('#ld_c2').on('click', function() {
         window.location.href = '/login_ld_c2';
     });
 });
 
-
+/* Handle code checks */
 document.addEventListener('DOMContentLoaded', function() {
+    /* Fetch content from user repo and compare for check */
     $('#verify111').on('click', function() {
         const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer1`;
@@ -72,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    /* Fetch content from user repo and compare for check */
     $('#verify112').on('click', function() {
 	const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer2`;

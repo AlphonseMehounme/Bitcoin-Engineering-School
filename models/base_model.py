@@ -1,9 +1,9 @@
-from datetime import datetime
-import models
-import uuid
 """
 Base model module
 """
+from datetime import datetime
+import models
+import uuid
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -37,6 +37,9 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
+        """
+        Return dict format of an object
+        """
         dict = self.__dict__.copy()
         dict["created_at"] = dict["created_at"].isoformat()
         dict["updated_at"] = dict["updated_at"].isoformat()

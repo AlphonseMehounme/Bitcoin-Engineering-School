@@ -1,3 +1,6 @@
+"""
+Course Module
+"""
 from api.v1.views import app_views
 from flask import jsonify, make_response, abort, request
 from models import storage
@@ -11,8 +14,12 @@ def get_category_courses(category_id):
     """
     courses_ojbs = storage.get(Course)
     return jsonify({})
+
 @app_views.route("/courses", methods=['GET'], strict_slashes=False)
 def get_courses():
+    """
+    Return all courses
+    """
     courses_objs = storage.all(Course)
     courses = {}
     for key, value in courses_objs.items():
@@ -21,6 +28,9 @@ def get_courses():
 
 @app_views.route("/courses/<course_id>", methods=['GET'], strict_slashes=False)
 def get_course(course_id):
+    """
+    Return a specific course based on course_id
+    """
     course = storage.get(Course, course_id)
     print(course)
     if course:
@@ -30,6 +40,9 @@ def get_course(course_id):
 
 @app_views.route("/courses/<course_id>", methods=['DELETE'], strict_slashes=False)
 def delete_course(course_id):
+    """
+    Delete a specific course based on course_id
+    """
     course = storage.get(Course, course_id)
     if course:
         storage.delete(course)
@@ -39,6 +52,9 @@ def delete_course(course_id):
 
 @app_views.route("/courses", methods=['POST'], strict_slashes=False)
 def add_course():
+    """
+    Add new course
+    """
     try:
         body = request.get_json()
         print(body)
@@ -56,6 +72,9 @@ def add_course():
 
 @app_views.route("/courses/<course_id>", methods=['PUT'], strict_slashes=False)
 def update_course(course_id):
+    """
+    Update a specific course based on course_id
+    """
     course = storage.get(Course, course_id)
     if course:
         try:

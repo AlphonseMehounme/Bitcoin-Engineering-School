@@ -1,31 +1,27 @@
+/*------------------*\
+ * Main CSS File
+\*------------------*/
+
+/* Main wrapper of Body */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+/* Main content */
 main {
     flex: 1;
 }
 
+/* Header */
 header {
     display: flex;
     height: 50px;
     background-color: #FF914D;
 }
 
-.logo {
-    
-}
-
-.overlay h1{
-  color: #fafcff;
-}
-
-.overlay p {
-  color: #fafcff;
-}
-
+/* Footer */
 footer {
   display: grid;
     height:100px;
@@ -39,6 +35,7 @@ footer {
     padding: 0;
 }
 
+/* Nav */
 nav ul {
   list-style-type: none;
   display: flex;
@@ -62,6 +59,7 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* Features */
 .feature-section {
     text-align: center;
     padding: 50px;
@@ -83,7 +81,6 @@ nav ul li a {
 .feature-image {
     width: 200px;
     height: 200px;
-    /*object-fit: cover;    */
     margin-bottom: 20px;
 }
 
@@ -91,6 +88,7 @@ nav ul li a {
     font-size: 16px;
 }
 
+/* Partners */
 .partner-section {
   text-align: center;
   padding: 50px;
@@ -117,6 +115,7 @@ nav ul li a {
   font-size: 16px;
 }
 
+/* Graduates */
 .graduate-section {
   text-align: center;
   padding: 50px;
@@ -144,6 +143,7 @@ nav ul li a {
   font-size: 16px;
 }
 
+/* Team */
 .team-section {
   text-align: center;
   padding: 50px;
@@ -183,11 +183,13 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* Project */
 .project-links {
   display: flex;
   justify-content: center;
 }
 
+/* Video */
 .video-section {
   text-align: center;
   padding: 50px;
@@ -213,6 +215,7 @@ nav ul li a {
   height: 100%;
 }
 
+/* Quote */
 .citation {
   background-color: #fff;
   padding: 20px;
@@ -229,11 +232,13 @@ nav ul li a {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .quote {
   font-style: italic;
   color: #555;
 }
 
+/* Body */
 body {
     font-family:      Verdana, Geneva, Arial, sans-serif;
     font-size:        medium;
@@ -245,6 +250,7 @@ body {
     padding:          0;
   }
 
+/* a elements */
 a {
     text-decoration:  none; 
     font-weight:      600; 
@@ -257,12 +263,14 @@ a:hover {
 a img {
     border:           0;
 }
-  
+
+/* h2 elements */
 h2 {
     font-size:        150%;
     text-align: center;
 }
-  
+
+/* Tables */
 table {
     margin-left:      20px;
     margin-right:     20px;
@@ -279,60 +287,61 @@ td, th {
     font-size:        75%;
     font-style:       italic;
   }
-  .slogan {
+
+.slogan {
     font-size:        75%;
     font-style:       italic;
-  }
-  .confirmentry {
+}
+  
+.confirmentry {
     font-weight:      600; 
-  }
+}
 
-  
-  table{
+table{
     margin:auto;
-  }
-
- form > p{
-    text-align:center;
-  }
+}
   
-  /*** Tables ***/
-  
-  table {
+table {
   font-size:          1em;
   background-color:   #fafcff;
   border:             1px solid #909090;
   color:              #2a2a2a;
   padding:            5px 5px 2px;
   border-collapse:    collapse;
-  }
+}
   
-  td, th {
+td, th {
   border:             thin dotted gray;
   }
-  
-  /*** Inputs ***/
-  input[type=text] {
+
+/* form */
+form > p{
+    text-align:center;
+}
+
+/* Inputs */
+input[type=text] {
     font-size:        115%;
     width:            30em;
-  }
-  input[type=submit] {
+}
+  
+input[type=submit] {
     font-size:        125%;
-  }
-  select {
+}
+  
+select {
     font-size:        125%;
-  }
+}
 
-  /** bannierre**/
-  .banner {
-      
+/* Banner */
+.banner {      
       background-image: url('../images/images.png');
       background-size: contain;
       height: 500px;
       width: 100%;
-  }
+}
 
-  .overlay {
+.overlay {
       position: relative;
       bottom: 0;
       left: 0;
@@ -343,34 +352,40 @@ td, th {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
-  }
+}
 
-  .overlay h2 {
+/* Overlay */
+.overlay h1, .overlay p {
+  color: #fafcff;
+}
+
+.overlay h2 {
       color: white;
       margin-bottom: 10px;
-  }
+}
 
-  .overlay button {
+.overlay button {
       background-color: #FF914D;
       color: #fafcff;
       padding: 10px 20px;
       border: none;
       cursor: pointer;
-  }
+}
 
-  div button, button {
+/* Button */
+div button, button {
     background-color: #FF914D;
     color: #fafcff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
 }
+
 .call{
   text-align: center;
 }
 
-/**services**/
+/* Courses */
 .service-card {
     display: flex;
     flex-wrap: wrap;
