@@ -2,11 +2,14 @@
 Main Module of our application
 """
 from api.v1.views import app_views
-from flask import Flask, make_response, jsonify, render_template, request, send_from_directory
+from flask import Flask, make_response, jsonify, render_template, request, send_from_directory, session
 from os import getenv
 import json
 
 app = Flask(__name__)
+
+# app.secret_key = '12345'
+app.config.from_pyfile('BES_CONFIG.py')
 app.register_blueprint(app_views)
 
 @app.route('/')
@@ -67,6 +70,9 @@ def besd_login_page_result() -> 'str':
     for user, user_data in data.items():
         if 'email' in user_data and 'password' in user_data:
             if user_data['email'] == email and user_data['password'] == password:
+                session['loggedin'] = True
+                session['id'] = user_data['id']
+                session['username'] = email
                 return render_template('besd.html', the_title='Bitcoin Dev Course')
             else:
                 continue
