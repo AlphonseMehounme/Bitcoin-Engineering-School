@@ -162,5 +162,5 @@ if __name__ == "__main__":
     Run the main app with specified HOST and PORT
     """
     HOST = getenv('BES_API_HOST', '127.0.0.1')
-    PORT = getenv('BES_API_PORT', 5000)
+    PORT = getenv('BES_API_PORT', 8000)
     app.run(host=HOST, port=PORT, debug=True, threaded=True)
