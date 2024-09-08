@@ -38,6 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#id_lnbcp').on('click', function() {
 	window.location.href = '/login_lnbcp';
     });
+
+	$gols = $('#idgolas')
+	$.ajax({
+	    url: 'http://127.0.01:800/api/v1/courses',
+	    method: "GET",
+	    success: function(gols) {
+		$.each(gols, function(i, gola) {
+		    $gols.append('<li>' + gola.name + '</li>');
+		});
+	    }
+	});
 });
 
 /* Handle code checks */
