@@ -40,6 +40,13 @@ def besd_login_page() -> 'str':
     """
     return render_template('login_besd.html', the_title='BES Login')
 
+@app.route('/login_lnbcp')
+def lnbcp_login_page() -> 'str':
+    """
+    Handle login page for LN Bootcamp course
+    """
+    return render_template('login_lnbcp.html', the_title='BES Login')
+
 @app.route('/login_besd_c2_l')
 def besd_login_c2_page() -> 'str':
     """
@@ -77,6 +84,29 @@ def besd_login_page_result() -> 'str':
             else:
                 continue
     return render_template('erreur_page.html', the_title='Login Error')
+
+@app.route('/login_lnbcp_result', methods=['POST'])
+def lnbcp_login_page_result() -> 'str':
+    """
+    Handle Login on LN Bootcamp Course Check
+    """
+    json_file = "file.json"
+    email = request.form['mail']
+    password = request.form['password']
+
+    with open(json_file) as file:
+        data = json.load(file)
+
+    for user, user_data in data.items():
+        if 'email' in user_data and 'password' in user_data:
+            if user_data['email'] == email and user_data['password'] == password:
+                session['loggedin'] = True
+                session['id'] = user_data['id']
+                session['username'] = email
+                return render_template('lnbcp.html', the_title="LN Bootcamp")
+            else:
+                continue
+    return render_template('erreur_page.html', the_title="Login Error")
 
 
 @app.route('/login_ld_result', methods=['POST'])

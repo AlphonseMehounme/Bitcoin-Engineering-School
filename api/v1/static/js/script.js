@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#ld_c2').on('click', function() {
         window.location.href = '/login_ld_c2';
     });
+
+    $('#id_lnbcp').on('click', function() {
+	window.location.href = '/login_lnbcp';
+    });
 });
 
 /* Handle code checks */
