@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	$gols = $('#idgolas')
 	$.ajax({
-	    url: 'http://127.0.01:800/api/v1/courses',
+	    url: 'http://bes.alphonsemehounme.tech/api/v1/courses',
 	    method: "GET",
 	    success: function(gols) {
 		$.each(gols, function(i, gola) {
