@@ -39,14 +39,21 @@ document.addEventListener('DOMContentLoaded', function() {
 	window.location.href = '/login_lnbcp';
     });
 
-	$gols = $('#idgolas')
+    $('#lnbcp_chapter_2').on('click', function() {
+	window.location.href = '/lnbcp2';});
+	$gols = $('#goalslnbcp2')
 	$.ajax({
-	    url: 'http://bes.alphonsemehounme.tech/api/v1/courses',
+	    url: 'http://bes.alphonsemehounme.tech/api/v1/courses/f6aed2d0-bf16-4fbd-bcab-ef89f3174a4c',
 	    method: "GET",
-	    success: function(gols) {
-		$.each(gols, function(i, gola) {
-		    $gols.append('<li>' + gola.name + '</li>');
+	    success: function(course) {
+		const goals = course.chapters[1].Goals;
+		console.log(goals);
+		$.each(goals, function(i, gola) {
+		    $gols.append('<li>' + gola + '</li>');
 		});
+	    },
+	    error: function(xhr, status, error) {
+		console.error(`Error fetching file: ${xhr.status} ${xhr.statusText}`)
 	    }
 	});
 });

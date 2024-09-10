@@ -47,6 +47,13 @@ def lnbcp_login_page() -> 'str':
     """
     return render_template('login_lnbcp.html', the_title='BES Login')
 
+@app.route('/lnbcp2')
+def login_lnbcp_c2() -> 'str':
+    """
+    Chapter 2 lnbcp
+    """
+    return render_template('lnbcp2.html', the_title='LN Bootcamp')
+
 @app.route('/login_besd_c2_l')
 def besd_login_c2_page() -> 'str':
     """
