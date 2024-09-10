@@ -40,22 +40,73 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     $('#lnbcp_chapter_2').on('click', function() {
-	window.location.href = '/lnbcp2';});
-	$gols = $('#goalslnbcp2')
+	window.location.href = '/lnbcp2';
+    });
+
+    $('#lnbcp_chapter_3').on('click', function() {
+	window.location.href = '/lnbcp3';
+    });
+
+    $('#lnbcp_chapter_4').on('click', function() {
+	window.location.href = '/lnbcp4';
+    });
+	$gols2 = $('#goalslnbcp2');
+	$res2 = $('#ressourceslnbcp2');
+        $gols3 = $('#goalslnbcp3');
+	$res3 = $('#ressourceslnbcp3');
+	$gols4 = $('#goalslnbcp4');
+	$res4 = $('#ressourceslnbcp4');
 	$.ajax({
 	    url: 'http://bes.alphonsemehounme.tech/api/v1/courses/f6aed2d0-bf16-4fbd-bcab-ef89f3174a4c',
 	    method: "GET",
 	    success: function(course) {
-		const goals = course.chapters[1].Goals;
-		console.log(goals);
+
+		let goals = course.chapters[0].Goals;
 		$.each(goals, function(i, gola) {
-		    $gols.append('<li>' + gola + '</li>');
+		    $('#goalslnbcp1').append('<li>' + gola + '</li>');
+		});
+		
+		let ressources = course.chapters[0].Ressources;
+		$.each(ressources, function(i, ressource) {
+		    $('#ressourceslnbcp1').append('<li>' + ressource + '</li>');
+		});
+
+		goals = course.chapters[1].Goals;
+		$.each(goals, function(i, gola) {
+		    $gols2.append('<li>' + gola + '</li>');
+		});
+
+		ressources = course.chapters[1].Ressources;
+		$.each(ressources, function(i, ressource) {
+		    $res2.append('<li>' + ressource + '</li>')
+		});
+
+		goals = course.chapters[2].Goals;
+		$.each(goals, function(i, gola) {
+		    $gols3.append('<li>' + gola + '</li>');
+		});
+
+		ressources = course.chapters[2].Ressources;
+		$.each(ressources, function(i, ressource) {
+		    $res3.append('<li>' + ressource + '</li>');
+		});
+
+		goals = course.chapters[3].Goals;
+		$.each(goals, function(i, gola) {
+		    $gols4.append('<li>' + gola + '</li>');
+		});
+
+		ressources = course.chapters[3].Ressources;
+		$.each(ressources, function(i, ressource) {
+		    $res4.append('<li>' + ressource + '</li>');
 		});
 	    },
 	    error: function(xhr, status, error) {
 		console.error(`Error fetching file: ${xhr.status} ${xhr.statusText}`)
 	    }
 	});
+
+
 });
 
 /* Handle code checks */
@@ -91,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* Fetch content from user repo and compare for check */
     $('#verify112').on('click', function() {
+	//console.log({{ session.github_username }});
 	const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer2`;
 

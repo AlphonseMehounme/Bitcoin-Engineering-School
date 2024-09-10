@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{ the_title }}</h2>
+<h4>Welcome {{ session.username }} x Satoshi ({{ session.id }}) </h4>
+<h3>Day 4 : Building on the Lightning Network</h3>
+<h4>Concepts & Goals</h4>
+<ul id="goalslnbcp4">
+</ul>
+<h4>Ressources (Read/Watch) : </h4>
+<ul id="ressourceslnbcp4">
+</ul>
+<h4>Requirements : </h4>
+<p>
+Create the repository lnbootcamp on github,<br>
+In the repo, create a directory named day4,<br>
+In the directory create each answer file with the correct answer.<br> Eg: lnbootcamp/day4/answer1 will contain the correct answer to challenge 1.
+</p>
+<h4>Challenges</h4>
+<ol>
+    <li>
+	<p>What is the unit used on the Lightning Network ?</p>
+	<p>Answer in lnbootcamp/day4/answer1</p>
+	<button id="#verify113">Verify</button>
+	<button id="status113">Status</button>
+    </li>
+    <br>
+</ol>
+<div id="lnbcp_chapter_end" style="text-align: center;"><button>Check Dashboard</button></div>
+
+{% endblock %}

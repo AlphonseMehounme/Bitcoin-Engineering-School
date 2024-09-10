@@ -54,6 +54,20 @@ def login_lnbcp_c2() -> 'str':
     """
     return render_template('lnbcp2.html', the_title='LN Bootcamp')
 
+@app.route('/lnbcp3')
+def login_lnbcp_c3() -> 'str':
+    """
+    Chapter 3 lnbcp
+    """
+    return render_template('lnbcp3.html', the_title='LN Bootcamp')
+
+@app.route('/lnbcp4')
+def login_lnbcp_c4() -> 'str':
+    """
+    Chapter 4 lnbcp
+    """
+    return render_template('lnbcp4.html', the_title='LN Bootcamp')
+
 @app.route('/login_besd_c2_l')
 def besd_login_c2_page() -> 'str':
     """
@@ -87,6 +101,7 @@ def besd_login_page_result() -> 'str':
                 session['loggedin'] = True
                 session['id'] = user_data['id']
                 session['username'] = email
+                session['github_username'] = user_data['github_username']
                 return render_template('besd.html', the_title='Bitcoin Dev Course')
             else:
                 continue
