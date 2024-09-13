@@ -107,6 +107,36 @@ def besd_login_page_result() -> 'str':
                 continue
     return render_template('erreur_page.html', the_title='Login Error')
 
+@app.route('/signup', methods=['POST'])
+def signup():
+    """
+    Handle sigup
+    """
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    username = request.form['username']
+    email = request.form['email']
+    password = request.form['password']
+    git_username = request.form['git_username']
+
+    data = {
+        'first_name': first_name,
+        'last_name': last_name,
+        'username': username,
+        'email': email,
+        'password': password,
+        'git_username': git_username
+    }
+
+    response = request.post('http://bes.alphonsemehounme.tech/api/v1/users', json=data)
+
+    if response.status_code == 200:
+        return render_template('login_ld.html', the_title='BES Login')
+    else:
+        return render_template('signup.html', the_title='BES Signup')
+
+
+
 @app.route('/login_lnbcp_result', methods=['POST'])
 def lnbcp_login_page_result() -> 'str':
     """
