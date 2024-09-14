@@ -4,39 +4,43 @@
 
 /* Handle Main button click after Dom content load */
 document.addEventListener('DOMContentLoaded', function() {
-    $('#id_bsd').on('click', function() {
-        window.location.href = '/login_besd';
+    $('#signuplogin').on('click', function() {
+        window.location.href = '/signup';
     });
 
-    $('#id_bsd2').on('click', function() {
-	window.location.href = '/login_besd';
+    $('#loginsignup').on('click', function() {
+	window.location.href = '/login';
     });
 
     $('#id_home').on('click', function() {
 	window.location.href = '/';
     });
     $('#join').on('click', function() {
-        window.location.href = '/join';
+        window.location.href = '/signup';
     });
 
     $('#join2').on('click', function() {
-	window.location.href = '/join';
+	window.location.href = '/signup';
     });
 
-    $('#id_ld').on('click', function() {
-        window.location.href = '/login_ld';
+    $('#bitdevcard').on('click', function() {
+	 window.location.href = '/bitdev';
+    });
+
+    $('#lndevcard').on('click', function() {
+        window.location.href = '/lndev';
     });
 
     $('#desd_chapter_2').on('click', function() {
-        window.location.href = '/login_besd_c2_l';
+        window.location.href = '/bitdev2';
     });
 
     $('#ld_c2').on('click', function() {
-        window.location.href = '/login_ld_c2';
+        window.location.href = '/lndev2';
     });
 
-    $('#id_lnbcp').on('click', function() {
-	window.location.href = '/login_lnbcp';
+    $('#lnbcpcard').on('click', function() {
+	window.location.href = '/lnbcp';
     });
 
     $('#lnbcp_chapter_2').on('click', function() {

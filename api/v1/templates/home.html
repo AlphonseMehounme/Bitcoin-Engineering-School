@@ -1,28 +1,115 @@
 {% extends 'base.html' %}
 {% block body %}
-<!-- <h2>{{ the_title }}</h2> -->
+<!-- <h2>{{ the_title }}</h2>-->
 <div class="bannière">
     <section class="banner">
         <div class="overlay">
-            <h2>Learn Bitcoin & Lightning Engineering with BES</h2>
-	    <!-- <button>Read More</button> -->
+	    <h1>The Bitcoin Engineering School</h1>
+            <p>The next gen Bitcoin Engineers are born here…</p>
+            <button id="join">Join Us Today</button>
         </div>
     </section>
 </div>
+    <section class="feature-section">
+        <h2 class="feature-title">Key Features</h2>
+        <p>At BES, we help you go from simple dev to a Bitcoin Engineers in simple 3 steps</p>
+        <div class="feature-card">
+            <img src="../static/images/online-learning.png" alt="Sign Up and Join a Course" class="feature-image">
+            <p class="feature-description">Sign Up and Join a Course</p>
+        </div>
+        <div class="feature-card">
+            <img src="../static/images/idea.png" alt="Take Course and Read All Resources" class="feature-image">
+            <p class="feature-description">Take Course and Read All Resources</p>
+        </div>
+        <div class="feature-card">
+            <img src="../static/images/code.png" alt="Write and Test Your Code" class="feature-image">
+            <p class="feature-description">Write and Test Your Code</p>
+        </div>
+    </section>
 
-<section class="service-card">
-    <div class="card" id="id_bsd">
-        <h3>Join Bitcoin Development Course</h3>
-        <p>Bitdev Course</p>
+    <div class="call">
+        <button id="join2">Join Us Today</button>
     </div>
-    <div class="card" id="id_lnbcp">
-	<h3>Join The Lightning Bootcamp<h3>
-	<p>Lightning Bootcamp</p>
+
+    <section class="partner-section">
+        <h2 class="partner-title">Our Potential Partners</h2>
+        <div class="partner-card">
+            <img src="../static/images/Chaincode_Labs.png" alt="Chaincode Labs" class="partner-image">
+            <p class="partner-name">Chaincode Labs</p>
+        </div>
+        <div class="partner-card">
+            <img src="../static/images/BTrust_Builders.png" alt="BTrust Builders" class="partner-image">
+            <p class="partner-name">BTrust Builders</p>
+        </div>
+        <div class="partner-card">
+            <img src="../static/images/PlanB_Network.png" alt="PlanB Network" class="partner-image">
+            <p class="partner-name">PlanB Network</p>
+        </div>
+    </section>
+
+    <section class="graduate-section">
+        <h2 class="graduate-title">Where our graduate engineers are working at</h2>
+        <div class="graduate-card">
+            <img src="../static/images/Flash.png" alt="Flash" class="graduate-logo">
+            <p class="graduate-name">Flash</p>
+        </div>
+        <div class="graduate-card">
+            <img src="../static/images/bitnob.jpeg" alt="Bitnob" class="graduate-logo">
+            <p class="graduate-name">Bitnob</p>
+        </div>
+        <div class="graduate-card">
+            <img src="../static/images/yellowcard.jpeg" alt="Yellowcard" class="graduate-logo">
+            <p class="graduate-name">Yellowcard</p>
+        </div>
+        <div class="graduate-card">
+            <img src="../static/images/blink.png" alt="Blink" class="graduate-logo">
+            <p class="graduate-name">Blink</p>
+        </div>
+    </section>
+
+    <h2 class="about-us-title" id="about">About Us</h2>
+
+    <div class="citation">
+        <p class="quote">"As a Bitcoiner, I’ve always dreamed of being a builder and contributing actively to the Bitcoin industry and adoption. I’ve joined a lot of programs and learned a lot of skill but I still have the feeling that I lack a really simple place where I could learn all I need to become a Bitcoin Engineer. As I did not find the place, I decided to build it with my friend Yam as our Portfolio project at Holberton School"</p>
+        <p class="author">Alphonse Mehounme</p>
     </div>
-    <div class="card" id="id_ld">
-        <h3>Join Lightning Development Course</h3>
-        <p>LNdev Course</p>
-    </div>
-</section>
+
+    <section class="team-section">
+        <h2 class="team-title">Our Team</h2>
+        <div class="team-member">
+            <img src="../static/images/image 1.png" alt="Abdoul-Mantynou Yacoubou" class="team-image">
+            <p class="team-name">Abdoul-Mantynou Yacoubou</p>
+            <div class="team-links">
+                <a href="https://www.linkedin.com/in/yam1st">LinkedIn</a>
+                <a href="https://github.com/yam1er">Github</a>
+                <a href="https://x.com/yacoubo00975961/">Twitter</a>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="../static/images/AL.png" alt="Alphonse Mehounme" class="team-image">
+            <p class="team-name">Alphonse Mehounme</p>
+            <div class="team-links">
+                <a href="https://www.linkedin.com/alphonsemehounme">LinkedIn</a>
+                <a href="https://github.com/AlphonseMehounme/Bitcoin-Engineering-School">Github</a>
+                <a href="https://x.com/">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <h2 class="project-title">Find Our Project on Github</h2>
+        
+	<a href="https://github.com/AlphonseMehounme/Bitcoin-Engineering-School" class="project-links"><p>Bitcoin Engineering School</p></a>
+                
+    </section>
+
+    <section class="video-section">
+        <h2 class="video-title">Watch Our Video</h2>
+        <div class="video-container">
+		<iframe src="https://www.loom.com/embed/b9d908a35095414bb0dd734ef976c85a?sid=681ae3af-40ab-4f09-bc94-744d1a0ffbed" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+    </section>
+
+
 
 {% endblock %}

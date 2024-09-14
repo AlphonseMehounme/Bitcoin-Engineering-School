@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-<form method='POST' action='/signup'>
+<form method='POST' action='/signupres'>
 <table>
 <p>Sign up to access course</p>
 <tr><td>First Name:</td><td><input name="first_name" type="text"></td></tr>
@@ -10,6 +10,9 @@
 <tr><td>Password:</td><td><input name="password" type="text"></td></tr>
 <tr><td>Github Username</td><td><input name="git_username" type="text"></td></tr>
 </table>
-<p><button><input value='Sigup' type='SUBMIT'></button></p>
+<p>
+    <button><input value='Sigup' type='SUBMIT'></button>
+</p>
 </form>
+<button id="signuplogin">Have an account ? Login</button>
 {% endblock %}

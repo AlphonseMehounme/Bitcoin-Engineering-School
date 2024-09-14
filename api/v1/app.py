@@ -5,6 +5,7 @@ from api.v1.views import app_views
 from flask import Flask, make_response, jsonify, render_template, request, send_from_directory, session
 from os import getenv
 import json
+import requests
 
 app = Flask(__name__)
 
@@ -17,76 +18,82 @@ def bes() -> str:
     """
     Handles / route and return Homepage
     """
-    return render_template('landing_page.html', the_title='Bitcoin Engineering School')
+    return render_template('home.html', the_title='Bitcoin Engineering School')
 
-@app.route('/join')
+@app.route('/courses')
 def index() -> str:
     """
     Handle /join route
     """
-    return render_template('home.html', the_title='BES Courses')
+    return render_template('courses.html', the_title='BES Courses')
 
-@app.route('/login_ld')
+@app.route('/login')
 def ld_login_page() -> 'str':
     """
     Handle login page for LN Dev course
     """
-    return render_template('login_ld.html', the_title='BES Login')
+    return render_template('login.html', the_title='BES Login')
 
-@app.route('/login_besd')
-def besd_login_page() -> 'str':
+@app.route('/lnbcp')
+def lnbcp() -> str:
     """
-    Handle login page for Bitcoin Dev course
+    Chapter 1 lnbcp
     """
-    return render_template('login_besd.html', the_title='BES Login')
-
-@app.route('/login_lnbcp')
-def lnbcp_login_page() -> 'str':
-    """
-    Handle login page for LN Bootcamp course
-    """
-    return render_template('login_lnbcp.html', the_title='BES Login')
+    return render_template('lnbcp.html', the_title='LN Bootcamp')
 
 @app.route('/lnbcp2')
-def login_lnbcp_c2() -> 'str':
+def lnbcp2() -> str:
     """
     Chapter 2 lnbcp
     """
     return render_template('lnbcp2.html', the_title='LN Bootcamp')
 
 @app.route('/lnbcp3')
-def login_lnbcp_c3() -> 'str':
+def lnbcp3() -> str:
     """
     Chapter 3 lnbcp
     """
     return render_template('lnbcp3.html', the_title='LN Bootcamp')
 
 @app.route('/lnbcp4')
-def login_lnbcp_c4() -> 'str':
+def lnbcp4() -> str:
     """
     Chapter 4 lnbcp
     """
     return render_template('lnbcp4.html', the_title='LN Bootcamp')
 
-@app.route('/login_besd_c2_l')
-def besd_login_c2_page() -> 'str':
+@app.route('/bitdev')
+def bitdev() -> str:
     """
-    Handle Chapter 2 of Bitcoin dev course route
+    Chapter 1 bitdev
     """
-    return render_template('besd_c2.html', the_title='Bitcoin Dev Course')
+    return render_template('bitdev.html', the_title='Bitdev Course')
 
-@app.route('/login_ld_c2')
-def ld_login_c2_page() -> 'str':
+@app.route('/bitdev2')
+def bitdev2() -> str:
     """
-    Handle Chapter 2 of LN Dev course route
+    Chapter 2 bitdev
     """
-    return render_template('ld_c2.html', the_title='Lightning Dev Course')
+    return render_template('bitdev2.html', the_title='Bitdev Course')
 
-
-@app.route('/login_besd_result', methods=['POST'])
-def besd_login_page_result() -> 'str':
+@app.route('/lndev')
+def lndev() -> str:
     """
-    Handle Login on Bitcoin Dev Course Check
+    Chapter 1 lndev
+    """
+    return render_template('lndev.html', the_title='Lndev Course')
+
+@app.route('/lndev2')
+def lndev2() -> str:
+    """
+    Chapter 2 lndev
+    """
+    return render_template('lndev2.html', the_title='Lndev Course')
+
+@app.route('/loginres', methods=['POST'])
+def loginres() -> str:
+    """
+    Handle Login Check
     """
     json_file = "file.json"
     email = request.form['mail']
@@ -101,16 +108,23 @@ def besd_login_page_result() -> 'str':
                 session['loggedin'] = True
                 session['id'] = user_data['id']
                 session['username'] = email
-                session['github_username'] = user_data['github_username']
-                return render_template('besd.html', the_title='Bitcoin Dev Course')
+                session['git_username'] = user_data['git_username']
+                return render_template('courses.html', the_title='BES Courses')
             else:
                 continue
-    return render_template('erreur_page.html', the_title='Login Error')
+    return render_template('loginerror.html', the_title='Login Error')
 
-@app.route('/signup', methods=['POST'])
+@app.route('/signup', methods=['GET'])
 def signup():
     """
-    Handle sigup
+    Handle signup
+    """
+    return render_template('signup.html', the_title="BES Signup")
+
+@app.route('/signupres', methods=['POST'])
+def signupres():
+    """
+    Handle sigup check
     """
     first_name = request.form['first_name']
     last_name = request.form['last_name']
@@ -128,95 +142,13 @@ def signup():
         'git_username': git_username
     }
 
-    response = request.post('http://bes.alphonsemehounme.tech/api/v1/users', json=data)
+    response = requests.post('http://bes.alphonsemehounme.tech/api/v1/users', json=data)
 
-    if response.status_code == 200:
-        return render_template('login_ld.html', the_title='BES Login')
+    if response.status_code == 201:
+        return render_template('login.html', the_title='BES Login')
     else:
         return render_template('signup.html', the_title='BES Signup')
 
-
-
-@app.route('/login_lnbcp_result', methods=['POST'])
-def lnbcp_login_page_result() -> 'str':
-    """
-    Handle Login on LN Bootcamp Course Check
-    """
-    json_file = "file.json"
-    email = request.form['mail']
-    password = request.form['password']
-
-    with open(json_file) as file:
-        data = json.load(file)
-
-    for user, user_data in data.items():
-        if 'email' in user_data and 'password' in user_data:
-            if user_data['email'] == email and user_data['password'] == password:
-                session['loggedin'] = True
-                session['id'] = user_data['id']
-                session['username'] = email
-                return render_template('lnbcp.html', the_title="LN Bootcamp")
-            else:
-                continue
-    return render_template('erreur_page.html', the_title="Login Error")
-
-
-@app.route('/login_ld_result', methods=['POST'])
-def ld_login_page_result() -> 'str':
-    """
-    Handle Login on LN Dev Course Check
-    """
-    json_file = "file.json"
-    email = request.form['mail']
-    password = request.form['password']
-
-    with open(json_file) as file:
-        data = json.load(file)
-
-    for user, user_data in data.items():
-        if 'email' in user_data and 'password' in user_data:
-            if user_data['email'] == email and user_data['password'] == password:
-                return render_template('ld.html', the_title='Lightning Dev Course')
-            else:
-                continue
-    return render_template('erreur_page.html', the_title='Login Error')
-
-
-@app.route('/login_result', methods=['POST'])
-def login_result_page() -> 'str':
-    """
-    Handle Login sessions
-    """
-    json_file = "file.json"
-    email = request.form['mail']
-    password = request.form['password']
-
-    with open(json_file) as file:
-        data = json.load(file)
-    courses = []
-    for user_id, user_data in data.items():
-        if 'email' in user_data and user_data['email'] == email:
-            if 'courses' in user_data:
-                courses = user_data['courses']
-    categories = []
-    for user_id, user_data in data.items():
-        if 'email' in user_data and user_data['email'] == email:
-            if 'categories' in user_data:
-                categories = user_data['categories']
-    for user, user_data in data.items():
-        if 'email' in user_data and 'password' in user_data:
-            if user_data['email'] == email and user_data['password'] == password:
-                return render_template('login_result.html', the_title='Welcome on BES', the_mail=email, the_password=password)
-
-    return render_template('login_result.html', the_title='Welcome on BES', the_courses=courses, the_categories=categories )
-
-
-@app.route('/service/<service_id>')
-def service_page(service_id):
-    """
-    Return a specific service page
-    """
-    return render_template('service_page.html', service_data=service_data)
 
 @app.route('/bitcoin.pdf')
 def serve_whitepaper():
@@ -224,6 +156,7 @@ def serve_whitepaper():
     Handle /bitcoin.pdf and serve Bitcoin Whitepaper
     """
     return send_from_directory('static/files', 'bitcoin.pdf')
+
 
 @app.teardown_appcontext
 def close_app(exception):
