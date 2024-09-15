@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     /* Fetch content from user repo and compare for check */
     $('#verify111').on('click', function() {
+	/*console.log( {{ session.username }})*/
         const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer1`;
 

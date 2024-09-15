@@ -381,6 +381,10 @@ div button, button {
     cursor: pointer;
 }
 
+.lgsu, .sulg, #loginsignup, #signuplogin {
+    text-align: center;
+}
+
 .call{
   text-align: center;
 }
