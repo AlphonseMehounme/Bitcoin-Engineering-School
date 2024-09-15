@@ -107,7 +107,7 @@ def loginres() -> str:
             if user_data['email'] == email and user_data['password'] == password:
                 session['loggedin'] = True
                 session['id'] = user_data['id']
-                session['username'] = email
+                session['username'] = user_data['username']
                 session['git_username'] = user_data['git_username']
                 return render_template('courses.html', the_title='BES Courses')
             else:
