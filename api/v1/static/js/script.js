@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Handle code checks */
 document.addEventListener('DOMContentLoaded', function() {
     /* Fetch content from user repo and compare for check */
-    $('#verify111').on('click', function() {
+    $('#lnbcpcheck1').on('click', function() {
 	/*console.log( {{ session.username }})*/
         const owner = "alphonsemehounme";
 	const url = `https://api.github.com/repos/${owner}/bitdev/contents/chapter1/answer1`;
@@ -131,12 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const content = atob(response.content);
 		console.log(content);
 		if (content == 2) {
-			$("#status111").text("Validated");
-			$("#status111").css('color', 'green');
+			$("#lnbcpstatus1").text("Validated");
+			$("#lnbcpstatus1").css('color', 'green');
 		}
 		else {
-			$("#status111").text("Failed");
-			$("#status111").css('color', 'red');
+			$("#lnbcpstatus1").text("Failed");
+			$("#lnbcpstatus1").css('color', 'red');
 		}
             },
             error: function(xhr, status, error) {
