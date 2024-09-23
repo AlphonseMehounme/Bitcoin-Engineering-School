@@ -39,17 +39,20 @@ def lnbcp() -> str:
     """
     Chapter 1 lnbcp
     """
-    if session['loginin'] == True:
+    if session['loggedin'] == True:
         return render_template('lnbcp.html', the_title='LN Bootcamp')
     else:
-        return render_emplate('login.html', the_title='Login BES')
+        return render_template('login.html', the_title='Login BES')
 
 @app.route('/lnbcp2')
 def lnbcp2() -> str:
     """
     Chapter 2 lnbcp
     """
-    return render_template('lnbcp2.html', the_title='LN Bootcamp')
+    if session['loggedin'] == True:
+        return render_template('lnbcp2.html', the_title='LN Bootcamp')
+    else:
+        return render_template('login.html', the_title='Login BES')
 
 @app.route('/lnbcp3')
 def lnbcp3() -> str:
